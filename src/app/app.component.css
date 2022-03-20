@@ -17,7 +17,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .container .inputs {
@@ -36,7 +36,7 @@
   padding: 12px 16px;
   border-radius: 0.4rem;
   outline: none;
-  border-color: #1652f0;
+  border-color: #80ecfa;
 }
 
 .container .inputs input {
@@ -44,7 +44,125 @@
   padding: 0.2rem;
   outline: none;
   border-radius: 0.4rem;
-  border: 1px solid #1652f0;
+  border: 1px solid #80ecfa;
   padding: 12px 16px;
+}
+
+.container .progress-bars {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .progress-bars .todo,
+.container .progress-bars .inprogress,
+.container .progress-bars .done {
+  width: 30%;
+  border-radius: 5px;
+  border: 1px solid #73d2de;
+}
+
+.container .progress-bars .todo header,
+.container .progress-bars .inprogress header,
+.container .progress-bars .done header {
+  background-color: #73d2de;
+  overflow: hidden;
+  padding: 1rem 0;
+  color: white;
+  text-align: center;
+}
+
+.container .progress-bars .todo .todo-body,
+.container .progress-bars .todo .progress-body,
+.container .progress-bars .todo .done-body,
+.container .progress-bars .inprogress .todo-body,
+.container .progress-bars .inprogress .progress-body,
+.container .progress-bars .inprogress .done-body,
+.container .progress-bars .done .todo-body,
+.container .progress-bars .done .progress-body,
+.container .progress-bars .done .done-body {
+  padding: 2rem 1rem;
+}
+
+.container .progress-bars .todo .todo-body .inner,
+.container .progress-bars .todo .progress-body .inner,
+.container .progress-bars .todo .done-body .inner,
+.container .progress-bars .inprogress .todo-body .inner,
+.container .progress-bars .inprogress .progress-body .inner,
+.container .progress-bars .inprogress .done-body .inner,
+.container .progress-bars .done .todo-body .inner,
+.container .progress-bars .done .progress-body .inner,
+.container .progress-bars .done .done-body .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .progress-bars .todo .todo-body .inner .right,
+.container .progress-bars .todo .progress-body .inner .right,
+.container .progress-bars .todo .done-body .inner .right,
+.container .progress-bars .inprogress .todo-body .inner .right,
+.container .progress-bars .inprogress .progress-body .inner .right,
+.container .progress-bars .inprogress .done-body .inner .right,
+.container .progress-bars .done .todo-body .inner .right,
+.container .progress-bars .done .progress-body .inner .right,
+.container .progress-bars .done .done-body .inner .right {
+  background-color: blue;
+  border: none;
+  margin-right: 1rem;
+}
+
+.container .progress-bars .todo .todo-body .inner .remove,
+.container .progress-bars .todo .progress-body .inner .remove,
+.container .progress-bars .todo .done-body .inner .remove,
+.container .progress-bars .inprogress .todo-body .inner .remove,
+.container .progress-bars .inprogress .progress-body .inner .remove,
+.container .progress-bars .inprogress .done-body .inner .remove,
+.container .progress-bars .done .todo-body .inner .remove,
+.container .progress-bars .done .progress-body .inner .remove,
+.container .progress-bars .done .done-body .inner .remove {
+  background-color: tomato;
+  border: none;
+}
+
+.container .progress-bars .todo .todo-body .inner .todone,
+.container .progress-bars .todo .progress-body .inner .todone,
+.container .progress-bars .todo .done-body .inner .todone,
+.container .progress-bars .inprogress .todo-body .inner .todone,
+.container .progress-bars .inprogress .progress-body .inner .todone,
+.container .progress-bars .inprogress .done-body .inner .todone,
+.container .progress-bars .done .todo-body .inner .todone,
+.container .progress-bars .done .progress-body .inner .todone,
+.container .progress-bars .done .done-body .inner .todone {
+  background-color: #2fcc2f;
+  border: none;
+}
+
+.difficulty {
+  color: white;
+  padding: 3px 5px;
+  border-radius: 7px;
+}
+
+.easy {
+  background-color: #62e462;
+}
+
+.medium {
+  background-color: #1b56d4;
+}
+
+.hard {
+  background-color: #e63434;
 }
 /*# sourceMappingURL=app.component.css.map */

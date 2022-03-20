@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 
   .inputs {
     display: flex;
@@ -20,7 +20,7 @@
       padding: 12px 16px;
       border-radius: 0.4rem;
       outline: none;
-      border-color: #1652f0;
+      border-color: #80ecfa;
     }
 
     input {
@@ -28,8 +28,73 @@
       padding: 0.2rem;
       outline: none;
       border-radius: 0.4rem;
-      border: 1px solid #1652f0;
+      border: 1px solid #80ecfa;
       padding: 12px 16px;
     }
   }
+
+  .progress-bars {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .todo,
+    .inprogress,
+    .done {
+      width: 30%;
+      border-radius: 5px;
+      border: 1px solid #73d2de;
+      header {
+        background-color: #73d2de;
+        overflow: hidden;
+        padding: 1rem 0;
+        color: white;
+        text-align: center;
+      }
+
+      .todo-body,
+      .progress-body,
+      .done-body {
+        padding: 2rem 1rem;
+
+        .inner {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .right {
+            background-color: blue;
+            border: none;
+            margin-right: 1rem;
+          }
+          .remove {
+            background-color: tomato;
+            border: none;
+          }
+          .todone {
+            background-color: rgb(47, 204, 47);
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.difficulty {
+  color: white;
+  padding: 3px 5px;
+  border-radius: 7px;
+}
+
+.easy {
+  background-color: rgb(98, 228, 98);
+}
+
+.medium {
+  background-color: rgb(27, 86, 212);
+}
+
+.hard {
+  background-color: rgb(230, 52, 52);
 }

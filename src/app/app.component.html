@@ -1,28 +1,73 @@
-<!-- <section class="container">
-    <section class="inner" *ngFor="let user of users" [ngClass]="isActive(user)">
-        <h1 class="inner__title">{{user.name}}</h1>
-        <p>This user is {{user.age}} years old</p>
-        <section class="btngroups">
-            <button *ngIf="!user.active" class="activate" (click)="activatebtn(user)">Activate</button>
-            <button *ngIf="user.active" class="deactivate" (click)="deactivatebtn(user)">Deactivate</button>
-        </section>
-    </section>
-
-</section> -->
-
 <section class="container">
     <div class="inputs">
         <button role="button" *ngIf="!visible" (click)="displayInputs()">Add New Task</button>
         <form action="" *ngIf="visible">
-            <input type="text" placeholder="Task Name" [(ngModel)]="data.text" />
-            <select name="" [(ngModel)]="data.difficulty></select>
+            <input name="task" type="text" placeholder="Task Name" [(ngModel)]="data.text" />
+            <select name="form" [(ngModel)]="data.difficulty">
+                <option selected [ngValue]="undefined" hidden>Select</option>
+                <option [ngValue]="difficulty.Easy">Easy</option>
+                <option [ngValue]="difficulty.Medium">Medium</option>
+                <option [ngValue]="difficulty.Hard">Hard</option>
+            </select>
             <button role=" button" (click)="addTask()">Add</button>
         </form>
 
     </div>
     <div class="progress-bars">
-        <div class="todo">1</div>
-        <div class="inprogress">2</div>
-        <div class="done">3</div>
+        <div class="todo">
+            <header>Todo</header>
+            <div class="todo-body">
+                <span *ngIf="!todos.length">{{emptyString}}</span>
+                <ul>
+                    <li *ngFor="let todo of todos; let i = index">
+                        <div class="inner">
+                            <span>{{i+1}}. {{todo.text}}</span>
+                            <div class="btn-group">
+                                <button (click)="moveToProgress(todo, i)" class="right">></button>
+                                <button (click)="remove(i)" class="remove">X</button>
+                            </div>
+                        </div>
+                        <span class="difficulty" [ngClass]="getStyle(todo)">{{todo.difficulty}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="inprogress">
+            <header>In Progress</header>
+            <div class="progress-body">
+                <span *ngIf="!inprogress.length">{{emptyString}}</span>
+                <ul>
+                    <li *ngFor="let progress of inprogress; let i = index">
+                        <div class="inner">
+                            <span>{{i+1}}. {{progress.text}}</span>
+                            <div class="btn-group">
+                                <button (click)="moveToTodo(progress, i)" class="right">
+                                    < </button>
+                                        <button (click)="moveToDone(progress, i)" class="todone">></button>
+                            </div>
+                        </div>
+                        <span class="difficulty" [ngClass]="getStyle(progress)">{{progress.difficulty}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="done">
+            <header>Done</header>
+            <div class="done-body">
+                <span *ngIf="!done.length">{{emptyString}}</span>
+                <ul>
+                    <li *ngFor="let item of done; let i = index">
+                        <div class="inner">
+                            <span>{{i+1}}. {{item.text}}</span>
+                            <div class="btn-group">
+                                <button (click)="backToProgress(item, i)" class="right">
+                                    < </button>
+                            </div>
+                        </div>
+                        <span class="difficulty" [ngClass]="getStyle(item)">{{item.difficulty}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </section>

@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +7,23 @@
           box-sizing: border-box;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+li {
+  list-style: none;
+  border: 1px solid #6d6969;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
 button {
   -webkit-appearance: button;
      -moz-appearance: button;
           appearance: button;
-  background-color: #1652f0;
-  border: 1px solid #1652f0;
+  background-color: #73d2de;
+  border: 1px solid #73d2de;
   border-radius: 4px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -47,12 +59,7 @@ button:focus {
 }
 
 button:hover {
-  background-color: #0a46e4;
-  border-color: #0a46e4;
-}
-
-button:active {
-  background-color: #0039d7;
-  border-color: #0039d7;
+  background-color: #80ecfa;
+  border-color: #80ecfa;
 }
 /*# sourceMappingURL=styles.css.map */
